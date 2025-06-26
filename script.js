@@ -1,8 +1,8 @@
-console.log("Hello World!")
+humanScore = 0;
+compScore = 0;
 
 function getComputerChoice(){
     const choice = Math.round((Math.random() * 3 + 0.5));
-    // console.log(choice)
     switch (choice){
         case 1:
             return "rock";
@@ -32,27 +32,28 @@ function getHumanChoice(){
     
 }
 
-console.log(getHumanChoice());
+function playRound(humanChoice, compChoice){
+    if (humanChoice == "error!"){
+        console.log("Incorrect choice!");
+            playRound(getHumanChoice(), compChoice);
+            return;
+        
+    }
+    console.log("You choose " + humanChoice);
+    console.log("Computer choose " + compChoice);
+    if (humanChoice == compChoice){
+        console.log("It's a tie!");
+    }
+    else if ( (humanChoice == "rock" && compChoice == "scissors") || 
+            (humanChoice == "paper" && compChoice == "rock") || 
+            (humanChoice == "scissors" && compChoice == "paper") ){
+        console.log("You win!");
+        humanScore++;
+    }
+    else{
+        console.log("Computer wins!");
+        compScore++;
+    }
+}
 
-// ones = 0
-// twos = 0
-// threes = 0
-// for (i = 0; i < 10000; i++){
-//     const choice = Math.round((Math.random() * 3 + 0.5));
-//     switch (choice){
-//         case 1:
-//             ones++;
-//             break;
-//         case 2:
-//             twos++;
-//             break;
-//         case 3:
-//             threes++;
-//             break;
-//         default:
-//             console.log("error!");
-//     }
-// }
-// console.log(ones);
-// console.log(twos);
-// console.log(threes);
+playRound(getHumanChoice(), getComputerChoice());
