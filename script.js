@@ -2,7 +2,7 @@ console.log("Hello World!")
 
 function getComputerChoice(){
     const choice = Math.round((Math.random() * 3 + 0.5));
-    console.log(choice)
+    // console.log(choice)
     switch (choice){
         case 1:
             return "rock";
@@ -18,8 +18,21 @@ function getComputerChoice(){
     }
 }
 
-console.log(getComputerChoice());
+function getHumanChoice(){
+    const choice = prompt("Rock, Paper or Scissors?").toLocaleLowerCase();
+    if (choice == "scissor"){
+        return "scissors";
+    }
+    else if (choice != "rock" && choice != "paper" && choice != "scissors"){
+        return "error!";
+    }
+    else{
+        return choice;
+    }
+    
+}
 
+console.log(getHumanChoice());
 
 // ones = 0
 // twos = 0
