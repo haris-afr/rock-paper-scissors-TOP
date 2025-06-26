@@ -57,10 +57,10 @@ function playRound(humanChoice, compChoice){
     }
 }
 
-for (i = 0; i < 5; i++){
-    playRound(getHumanChoice(), getComputerChoice());
-}
+// for (i = 0; i < 5; i++){
+//     playRound(getHumanChoice(), getComputerChoice());
+// }
 
-console.log("You won " + humanScore + " times.");
-console.log("Computer won " + compScore + " times.");
-console.log("There were " + ties + " ties."); 
+// console.log("You won " + humanScore + " times.");
+// console.log("Computer won " + compScore + " times.");
+// console.log("There were " + ties + " ties."); 
