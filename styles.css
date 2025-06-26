@@ -25,3 +25,12 @@
     gap: 15px;
     margin: 30px;
 }
+
+.output{
+    text-align: center;
+    margin: 20px;
+}
+
+.output p{
+    margin: 0;
+}

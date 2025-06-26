@@ -19,19 +19,34 @@ function getComputerChoice(){
     }
 }
 
-function getHumanChoice(){
-    const choice = prompt("Rock, Paper or Scissors?").toLocaleLowerCase();
-    if (choice == "scissor"){
-        return "scissors";
+//function getHumanChoice(){
+//}
+const btnList = Array.from(document.querySelectorAll(".choice"));
+btnList.forEach(btn => {
+    const index = btnList.indexOf(btn);
+    switch (index){
+        case 0:
+            document.addEventListener("click", function(){
+                console.log("rock");
+            }); 
+            break;
+        case 1:
+            document.addEventListener("click", function(){
+                console.log("paper");
+            }); 
+            break;
+        case 2:
+            document.addEventListener("click", function(){
+               console.log("scissors");
+            }); 
+            break;
+        default:
+            console.log("error!");
+            break;
     }
-    else if (choice != "rock" && choice != "paper" && choice != "scissors"){
-        return "error!";
-    }
-    else{
-        return choice;
-    }
-    
-}
+
+});    
+
 
 function playRound(humanChoice, compChoice){
     if (humanChoice == "error!"){
