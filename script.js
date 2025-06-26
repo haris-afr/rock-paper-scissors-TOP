@@ -1,5 +1,6 @@
 humanScore = 0;
 compScore = 0;
+ties = 0;
 
 function getComputerChoice(){
     const choice = Math.round((Math.random() * 3 + 0.5));
@@ -35,14 +36,14 @@ function getHumanChoice(){
 function playRound(humanChoice, compChoice){
     if (humanChoice == "error!"){
         console.log("Incorrect choice!");
-            playRound(getHumanChoice(), compChoice);
-            return;
-        
+        playRound(getHumanChoice(), compChoice);
+        return;
     }
     console.log("You choose " + humanChoice);
     console.log("Computer choose " + compChoice);
     if (humanChoice == compChoice){
         console.log("It's a tie!");
+        ties++;
     }
     else if ( (humanChoice == "rock" && compChoice == "scissors") || 
             (humanChoice == "paper" && compChoice == "rock") || 
@@ -56,4 +57,9 @@ function playRound(humanChoice, compChoice){
     }
 }
 
-playRound(getHumanChoice(), getComputerChoice());
+for (i = 0; i < 5; i++){
+    playRound(getHumanChoice(), getComputerChoice());
+}
+console.log("You won " + humanScore + " times.");
+console.log("Computer won " + compScore + " times.");
+console.log("There were " + ties + " ties."); 
