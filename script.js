@@ -19,24 +19,23 @@ function getComputerChoice(){
     }
 }
 
-//function getHumanChoice(){
-//}
+
 const btnList = Array.from(document.querySelectorAll(".choice"));
 btnList.forEach(btn => {
     const index = btnList.indexOf(btn);
     switch (index){
         case 0:
-            document.addEventListener("click", function(){
+            btn.addEventListener("click", function(){
                 console.log("rock");
             }); 
             break;
         case 1:
-            document.addEventListener("click", function(){
+            btn.addEventListener("click", function(){
                 console.log("paper");
             }); 
             break;
         case 2:
-            document.addEventListener("click", function(){
+            btn.addEventListener("click", function(){
                console.log("scissors");
             }); 
             break;
