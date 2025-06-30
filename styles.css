@@ -27,10 +27,20 @@
 }
 
 .output{
-    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     margin: 20px;
 }
 
 .output p{
     margin: 0;
+}
+
+.output .line-4{
+    margin-top: 25px;
+}
+
+.playagain-button{
+    display: none;
 }
